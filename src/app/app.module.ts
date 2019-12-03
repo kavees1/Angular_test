@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { Routes, RouterModule } from '@angular/router';
 
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { DashComponent } from './dash/dash.component';
 
+const routes: Routes =
+[
+	{ path: '', redirectTo: '/dash', pathMatch: "full" },
+  { path: 'app', component: AppComponent },
+  { path: 'first', component: FirstComponent },
+  { path: 'second', component: SecondComponent },
+  { path: 'dash', component: DashComponent },
+ 
+
+];
 
 
 @NgModule({
@@ -22,9 +31,9 @@ import { DashComponent } from './dash/dash.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
