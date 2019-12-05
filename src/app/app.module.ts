@@ -12,6 +12,7 @@ import { DashComponent } from './dash/dash.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { CatalogComponent } from './catalog/catalog.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { ShiptoComponent } from './shipto/shipto.component';
@@ -30,6 +31,7 @@ const routes: Routes =
   { path: 'category', component: CategoryComponent },
   { path: 'product', component: ProductComponent },
   { path: 'shipto', component: ShiptoComponent },
+  { path: '**', component: CatalogComponent }
 ];
 
 
