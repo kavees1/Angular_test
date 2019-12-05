@@ -7,6 +7,8 @@ import { Router } from "@angular/router";
 
      <button (click)="onclick()">Back </button>
      <br>
+     <button routerLink="/shipto"> To shipto </button>
+     <br>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']

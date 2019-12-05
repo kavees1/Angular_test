@@ -22,16 +22,16 @@ export class SecondComponent implements OnInit {
    }
   url_get;
   ngOnInit() {
-   /*  this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => 
+   this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => 
       {
         this.url_get = JSON.stringify(data);
-      }); */
-      let url =  "http://localhost:37865/RT?cors&num="+this.num;
+      }); 
+    /*   let url =  "http://localhost:44918/RT?cors&num="+this.num;
       this.http.get(url,{withCredentials: true, responseType: 'text'}).subscribe(data => 
       {
         console.log("THe data is " + data);
        this.url_get = data;
-      });
+      }); */
   }
 
 }
