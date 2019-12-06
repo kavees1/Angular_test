@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input } from '@angular/core';
-import {ParentComponent} from  '../parent/parent.component';
+import {ParentComponent} from '../parent/parent.component';
+
 @Component({
   selector: 'app-child',
   template: `
@@ -15,10 +16,10 @@ import {ParentComponent} from  '../parent/parent.component';
 })
 export class ChildComponent implements OnInit {
   @Input() fromParent : string;
-  constructor() { 
-    
+  data;
+constructor() {
 
-  }
+}
 
   parentfrom;
   ngOnChanges() {
@@ -27,8 +28,8 @@ export class ChildComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.parentfrom = this.fromParent;
-    console.log("the from parent value is " + this.fromParent);
+    this.parentfrom = ParentComponent.test_vairabe_in_parent;
+    console.log("the from parent value is " + this.parentfrom);
   }
 
 }

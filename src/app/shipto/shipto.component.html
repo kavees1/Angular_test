@@ -1,24 +1,28 @@
 <form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <label>Recepient Name</label>
-    <input type="text" name="name" [(ngModel)]="name" />
+    <input type="text" required  name="name" [(ngModel)]="name" />
     <br/>
     <label>Street Address 1</label>
-    <input type="text" name="addr1" [(ngModel)]="addr1" />
+    <input type="text" required  name="addr1" [(ngModel)]="addr1" />
     <br/>
     <label>Street Address 2</label>
     <input type="text" name="addr2" [(ngModel)]="addr2" />
     <br/>
     <label>City</label>
-    <input type="text" name="city" [(ngModel)]="city" />
+    <input type="text" required  name="city" [(ngModel)]="city" />
     <br/>
     <label>Provice/State</label>
-    <input type="text" name="state" [(ngModel)]="state" />
+    <input type="text" required  name="state" [(ngModel)]="state" />
     <br/>
     <label>Postal/Zip Code</label>
-    <input type="text" name="zip" [(ngModel)]="zip" />
+    <input type="text" required  name="zip" [(ngModel)]="zip" />
     <br/>
     <label>Delivery Instructions</label>
-    <input type="text" name="delivery" [(ngModel)]="delivery" />
+    <input type="text" name="delivery" [(ngModel)]="delivery"   #deli="ngModel"/>
+    <div [hidden]="deli.valid || deli.pristine"
+     class="alert alert-danger">
+     Name is required
+    </div>
     <br/>
-    <button  type="submit">Submit</button>
+    <button [disabled]="!myForm.form.valid" type="submit">Submit</button>
   </form>

@@ -12,10 +12,12 @@ import { DashComponent } from './dash/dash.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { CatalogComponent } from './catalog/catalog.component';
+
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { ShiptoComponent } from './shipto/shipto.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes =
@@ -31,6 +33,8 @@ const routes: Routes =
   { path: 'category', component: CategoryComponent },
   { path: 'product', component: ProductComponent },
   { path: 'shipto', component: ShiptoComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '**', component: CatalogComponent }
 ];
 
@@ -47,6 +51,8 @@ const routes: Routes =
     CategoryComponent,
     ProductComponent,
     ShiptoComponent,
+    CartComponent,
+    CheckoutComponent,
   
   ],
   imports: [

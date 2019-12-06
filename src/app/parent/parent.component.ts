@@ -15,11 +15,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  vairabe_in_parent;
-  constructor() { }
+ static test_vairabe_in_parent:string;
+ vairabe_in_parent:string;
+  constructor() { 
+
+
+  }
 
   ngOnInit() {
     this.vairabe_in_parent = "POPULATING VARUABLE IN PARENT TS CLASS";
+    ParentComponent.test_vairabe_in_parent = this.vairabe_in_parent;
+    console.log("FROM PARENT CLASS" + ParentComponent.test_vairabe_in_parent );
   }
 
 }

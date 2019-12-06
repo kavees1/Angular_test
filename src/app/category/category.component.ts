@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
-
+import {Global} from '../global';
 import {Location} from '@angular/common';
 @Component({
   selector: 'app-category',
@@ -29,7 +29,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     
     console.log("The ID FORM THE CATEGORY IS"  + this.id);
-    let url = "http://red.cse.yorku.ca:32849/list?cors";
+    let url = Global.globalVar+"/list?cors";
  // let url =  GLOBALS.globalVar+"/list?cors"
     url += "&id="+this.id;
     console.log("THE URL IS" + url);

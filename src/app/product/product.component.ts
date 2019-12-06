@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import {Location} from '@angular/common';
-import { GLOBALS } from "../global";
+import {Global} from '../global';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-product',
@@ -29,7 +29,7 @@ export class ProductComponent implements OnInit {
     
     console.log("The ID FORM THE CATEGORY IS"  + this.id);
    // let url = "http://red.cse.yorku.ca:41955/Product?cors";
-   let url =  "http://red.cse.yorku.ca:32849/Product?cors";
+   let url =  Global.globalVar+"/Product?cors";
     url += "&id="+this.id;
     console.log("THE URL IS" + url);
     this.http.get(url).subscribe(data => {
@@ -56,7 +56,7 @@ export class ProductComponent implements OnInit {
       "price": this.empList[0].cost
     };
    
-    let url = "http://red.cse.yorku.ca:32849/cart?cors";
+    let url = Global.globalVar+"/cart?cors";
     url += "&repeat=" + JSON.stringify(eachProduct);
     //alert("The url is " + url);
     this.http.get(url,{withCredentials: true}).subscribe(data => {
