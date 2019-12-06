@@ -3,12 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-second',
-  template: `
-    <p>
-      second works!
-      {{url_get}}
-    </p>
-  `,
+  templateUrl: './second.component.html',
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent implements OnInit {

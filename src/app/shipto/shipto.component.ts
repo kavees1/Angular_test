@@ -21,11 +21,13 @@ export class ShiptoComponent implements OnInit {
   delivery: string;
 x:string;
 username: string;
+static show:boolean;
  ca = new RegExp(/([ABCEGHJKLMNPRSTVXY]\d)([ABCEGHJKLMNPRSTVWXYZ]\d){2}/i);
  postalCode;
   constructor(private location: Location) { }
 
   ngOnInit() {
+    ShiptoComponent.show = false;
     alert("from static catalog" + CatalogComponent.test );
     //alert("Locall stored is " + localStorage.getItem("name"));
   }
@@ -34,7 +36,7 @@ username: string;
   {
      //this.sum = parseInt(this.x) + parseInt(this.y);
     
-     
+     ShiptoComponent.show = true;
       localStorage.setItem("name", this.name);
       localStorage.setItem("addr1", this.addr1);
       localStorage.setItem("addr2", this.addr2);

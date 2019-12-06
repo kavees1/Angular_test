@@ -3,38 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-first',
-  template: `
-
-  <input id="name" name="name" class="form-control"
-      required minlength="4" appForbiddenName="bob"
-      [(ngModel)]="names" #name="ngModel" >
-
-<div *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert alert-danger">
-
-  <div *ngIf="name.errors.required">
-    Name is required.
-  </div>
-  <div *ngIf="name.errors.minlength">
-    Name must be at least 4 characters long.
-  </div>
-  <div *ngIf="name.errors.forbiddenName">
-    Name cannot be Bob.
-  </div>
-
-</div>
-  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-  <input type="text" name="x" [(ngModel)]="x" />
-  <br/>
-  <input type="text" name="y" [(ngModel)]="y" />
-  <br/>
-  <button type="submit">ADD</button>
-  <br>
-
-</form>
-   <p [hidden]="show"> The sum if {{sum}} </p>
-   <p [hidden]="show1"> The sum1 if {{sum1}} </p>
-  `,
+  templateUrl: './first.component.html',
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent implements OnInit {
@@ -55,8 +24,13 @@ x1;
 y1;
 show :boolean = true;
 show1 :boolean = true;
+ map = new Map();
+
   ngOnInit() {
-    
+    this.map.set("A",1);
+    this.map.set("B",2);
+    this.map.set("C",3);
+    console.log("1:"+this.map.get("A"));
   }
   onSubmit(): void
   {

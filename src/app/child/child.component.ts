@@ -3,15 +3,7 @@ import {ParentComponent} from '../parent/parent.component';
 
 @Component({
   selector: 'app-child',
-  template: `
-    <p>
-      child works!
-    </p>
-    <h3>  <p>I received {{fromParent}} from my parent.</p></h3>
-    <h4>{{parentfrom}}</h4>    
-    
-    `
-  ,
+  templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {

@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { Location } from '@angular/common';
 import {Global} from '../global'
 import { Router } from '@angular/router';
+import { ShiptoComponent} from '../shipto/shipto.component';
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -34,7 +36,7 @@ export class CheckoutComponent implements OnInit {
 
  
   ngOnInit() {
-   
+ 
     this.name = localStorage.getItem("name");
       this.addr1 = localStorage.getItem("addr1");
       this.addr2 = localStorage.getItem("addr2");
